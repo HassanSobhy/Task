@@ -1,7 +1,9 @@
 package com.example.android.technicaltask.Adapters;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,8 @@ import com.example.android.technicaltask.Models.PostsModel;
 import com.example.android.technicaltask.R;
 
 import java.util.List;
+
+import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHolder> {
 
@@ -35,10 +39,11 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsViewHol
 
     @Override
     public void onBindViewHolder(@NonNull PostsViewHolder holder, int position) {
-        holder.mUserIdTextView.setText(String.valueOf(mPostsModels.get(position).getUserId()));
-        holder.mIdTextView.setText(String.valueOf(mPostsModels.get(position).getId()));
-        holder.mTitleTextView.setText(mPostsModels.get(position).getTitle());
-        holder.mBodyTextView.setText(mPostsModels.get(position).getBody());
+
+        holder.mUserIdTextView.setText("id : " + String.valueOf(mPostsModels.get(position).getUserId()));
+        holder.mIdTextView.setText("user id : " + String.valueOf(mPostsModels.get(position).getId()));
+        holder.mTitleTextView.setText("title : " + mPostsModels.get(position).getTitle() + "\n");
+        holder.mBodyTextView.setText("body : " +mPostsModels.get(position).getBody() + "\n");
     }
 
     @Override
