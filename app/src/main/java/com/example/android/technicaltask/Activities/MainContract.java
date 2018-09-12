@@ -11,21 +11,15 @@ public interface MainContract {
     interface Presenter {
 
         void onDestroy();
-
-        void onRefreshButtonClick();
-
+        
         void requestDataFromServer();
 
     }
 
 
-    // showProgress() and hideProgress() would be used for displaying and hiding the progressBar
-    // while the setDataToRecyclerView and onResponseFailure is fetched from the GetNoticeInteractorImpl class
+    //  the setDataToRecyclerView and onResponseFailure is fetched from the GetNoticeInteractorImpl class
     interface MainView {
 
-        void showProgress();
-
-        void hideProgress();
 
         void setDataToRecyclerView(List<PostsModel> postsModels);
 

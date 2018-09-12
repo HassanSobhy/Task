@@ -44,15 +44,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
     }
 
-    @Override
-    public void showProgress() {
-
-    }
-
-    @Override
-    public void hideProgress() {
-
-    }
 
     @Override
     public void setDataToRecyclerView(List<PostsModel> postsModels) {

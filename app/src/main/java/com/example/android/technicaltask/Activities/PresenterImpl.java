@@ -21,15 +21,6 @@ public class PresenterImpl implements MainContract.Presenter, MainContract.GetPo
         mMainView = null;
     }
 
-    @Override
-    public void onRefreshButtonClick() {
-        /*
-        if(mMainView != null){
-            mMainView.showProgress();
-        }
-        mGetPostInteractors.getPostsList(this);
-        */
-    }
 
     @Override
     public void requestDataFromServer() {
@@ -40,7 +31,6 @@ public class PresenterImpl implements MainContract.Presenter, MainContract.GetPo
     public void onFinished(List<PostsModel> postsModels) {
         if(mMainView != null){
             mMainView.setDataToRecyclerView(postsModels);
-            //mMainView.hideProgress();
         }
     }
 
@@ -48,7 +38,6 @@ public class PresenterImpl implements MainContract.Presenter, MainContract.GetPo
     public void onFailure(Throwable t) {
         if(mMainView != null){
             mMainView.onResponseFailure(t);
-            //mMainView.hideProgress();
         }
     }
 }
